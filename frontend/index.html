@@ -1,0 +1,1283 @@
+<!doctype html>
+<html class="dark" lang="pt-BR">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>MegaX | Logística Premium B2B</title>
+  <meta name="description"
+    content="MegaX: transporte B2B em todo o Brasil. E-commerce, cargas gerais e sensíveis. Resposta em até 5 minutos no WhatsApp." />
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@700&display=swap"
+    rel="stylesheet" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,500,0,0"
+    rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#0B1B3A",
+            secondary: "#FF6A3D",
+            "background-dark": "#0B1120",
+            "background-darker": "#070B16",
+            "panel": "rgba(15, 23, 42, 0.72)",
+            "panel2": "rgba(2, 6, 23, 0.55)",
+            "line": "rgba(255,255,255,0.10)",
+            "whatsapp": "#25D366"
+          },
+          fontFamily: {
+            display: ["Inter", "sans-serif"],
+            accent: ["Orbitron", "sans-serif"],
+          },
+          boxShadow: {
+            glow: "0 0 0 1px rgba(255,106,61,0.20), 0 25px 80px rgba(0,0,0,0.60)",
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.8s ease-out',
+            'slide-up': 'slideUp 0.6s ease-out',
+            'pulse-glow': 'pulseGlow 2s infinite',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            slideUp: {
+              '0%': { transform: 'translateY(20px)', opacity: '0' },
+              '100%': { transform: 'translateY(0)', opacity: '1' },
+            },
+            pulseGlow: {
+              '0%, 100%': { boxShadow: '0 0 20px rgba(255, 106, 61, 0.3)' },
+              '50%': { boxShadow: '0 0 30px rgba(255, 106, 61, 0.6)' },
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    .glass {
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.10);
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #FFFFFF 0%, #CBD5E1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-overlay {
+      background: radial-gradient(1200px 700px at 12% 18%, rgba(255, 106, 61, 0.22), transparent 55%),
+        radial-gradient(900px 600px at 82% 20%, rgba(59, 130, 246, 0.20), transparent 60%),
+        linear-gradient(90deg, rgba(7, 11, 22, 0.98) 0%, rgba(7, 11, 22, 0.80) 50%, rgba(7, 11, 22, 0.30) 85%, rgba(7, 11, 22, 0.15) 100%);
+    }
+
+    .btn-soft {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .section-padding {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+
+    .hover-lift {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .hover-lift:hover {
+      transform: translateY(-5px);
+    }
+
+    .info-card {
+      transition: all 0.3s ease;
+      border-left: 4px solid transparent;
+    }
+
+    .info-card:hover {
+      border-left-color: #FF6A3D;
+      background: rgba(255, 106, 61, 0.05);
+    }
+
+    /* Estilos para FAQ */
+    details summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details summary {
+      list-style: none;
+      position: relative;
+      padding-right: 2rem;
+    }
+
+    details summary:after {
+      content: '+';
+      position: absolute;
+      right: 0;
+      top: 0;
+      font-size: 1.5rem;
+      color: #FF6A3D;
+      transition: transform 0.3s;
+    }
+
+    details[open] summary:after {
+      content: '−';
+    }
+  </style>
+</head>
+
+<body class="bg-background-dark text-slate-100 font-display transition-colors duration-300">
+  <!-- NAV -->
+  <nav class="fixed w-full z-50 glass border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <a class="flex items-center gap-3" href="#top" aria-label="MegaX">
+          <img id="logoTop" alt="MegaX Logo" class="h-16 w-auto brightness-110" />
+          <div class="hidden sm:block">
+            <div class="font-accent tracking-wider text-sm text-white/90">MEGAX</div>
+            <div class="text-[11px] text-slate-400 -mt-0.5">Logística Premium B2B</div>
+          </div>
+        </a>
+
+        <div class="hidden md:flex space-x-8 items-center">
+          <a class="text-sm font-semibold text-slate-300 hover:text-secondary transition-colors hover-lift"
+            href="#servicos">Serviços</a>
+          <a class="text-sm font-semibold text-slate-300 hover:text-secondary transition-colors hover-lift"
+            href="#valores">Valores</a>
+          <a class="text-sm font-semibold text-slate-300 hover:text-secondary transition-colors hover-lift"
+            href="#empresa">Empresa</a>
+          <a class="text-sm font-semibold text-slate-300 hover:text-secondary transition-colors hover-lift"
+            href="#depoimentos">Depoimentos</a>
+          <a class="text-sm font-semibold text-slate-300 hover:text-secondary transition-colors hover-lift"
+            href="#cobertura">Cobertura</a>
+          <a class="text-sm font-semibold text-slate-300 hover:text-secondary transition-colors hover-lift"
+            href="#faq">FAQ</a>
+
+          <a id="ctaTop"
+            class="bg-secondary hover:bg-opacity-90 text-white px-6 py-2 rounded-lg font-extrabold text-sm transition-all border border-white/10 shadow-[0_0_24px_rgba(255,106,61,0.22)] hover-lift animate-pulse-glow">
+            Cotar Agora
+          </a>
+        </div>
+
+        <button class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg btn-soft"
+          onclick="toggleMenu()">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </div>
+
+      <!-- Mobile menu -->
+      <div id="mobileMenu" class="md:hidden hidden pb-4">
+        <div class="grid gap-2">
+          <a class="px-3 py-2 rounded-lg btn-soft hover:bg-white/10 transition-colors" href="#servicos">Serviços</a>
+          <a class="px-3 py-2 rounded-lg btn-soft hover:bg-white/10 transition-colors" href="#valores">Valores</a>
+          <a class="px-3 py-2 rounded-lg btn-soft hover:bg-white/10 transition-colors" href="#empresa">Empresa</a>
+          <a class="px-3 py-2 rounded-lg btn-soft hover:bg-white/10 transition-colors"
+            href="#depoimentos">Depoimentos</a>
+          <a class="px-3 py-2 rounded-lg btn-soft hover:bg-white/10 transition-colors" href="#cobertura">Cobertura</a>
+          <a class="px-3 py-2 rounded-lg btn-soft hover:bg-white/10 transition-colors" href="#faq">FAQ</a>
+          <a id="ctaTopMobile"
+            class="px-3 py-2 rounded-lg bg-secondary font-extrabold text-center hover:bg-secondary/90">Cotar em 5
+            min</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="top" class="relative min-h-screen flex items-center pt-20 overflow-hidden animate-fade-in">
+    <div class="absolute inset-0 z-0">
+      <img alt="Frota e logística" class="w-full h-full object-cover opacity-35"
+        src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=2075&auto=format&fit=crop" />
+      <div class="absolute inset-0 hero-overlay"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="space-y-8 animate-slide-up">
+          <div class="inline-flex items-center gap-3 px-4 py-2 bg-secondary/15 border border-secondary/25 rounded-full">
+            <span class="relative flex h-3 w-3">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-3 w-3 bg-secondary"></span>
+            </span>
+            <span class="text-xs font-extrabold uppercase tracking-widest text-secondary">RESPOSTA GARANTIDA EM 5
+              MINUTOS</span>
+          </div>
+
+          <h1 class="text-4xl lg:text-6xl font-extrabold leading-tight gradient-text">
+            Logística B2B <br />
+            <span class="text-secondary" style="-webkit-text-fill-color:unset">de Alto Padrão</span>
+          </h1>
+
+          <p class="text-lg text-slate-300/80 max-w-xl leading-relaxed">
+            Transporte interestadual profissional para <strong>e-commerce</strong>,
+            <strong>cargas gerais</strong> e <strong>cargas sensíveis</strong>.
+            Atendimento direto, visibilidade completa e execução com excelência.
+          </p>
+
+          <div class="flex flex-wrap gap-4">
+            <a id="ctaHero"
+              class="bg-secondary text-white px-6 py-3 rounded-xl font-bold text-base hover:bg-secondary/90 transition-all flex items-center gap-2 shadow-[0_0_26px_rgba(255,106,61,0.22)] hover-lift">
+              <span class="material-symbols-outlined">whatsapp</span>
+              Chamar no WhatsApp
+            </a>
+
+            <a href="#servicos"
+              class="btn-soft px-6 py-3 rounded-xl font-bold text-base hover:bg-white/10 transition-all hover-lift">
+              <span class="material-symbols-outlined">visibility</span>
+              Conhecer Serviços
+            </a>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4">
+            <div class="info-card glass rounded-xl px-4 py-3">
+              <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-secondary text-base">local_shipping</span>
+                <div>
+                  <div class="font-semibold text-sm">Brasil Inteiro</div>
+                  <div class="text-xs text-slate-400">Cobertura Nacional</div>
+                </div>
+              </div>
+            </div>
+            <div class="info-card glass rounded-xl px-4 py-3">
+              <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-secondary text-base">hub</span>
+                <div>
+                  <div class="font-semibold text-sm">E-commerce</div>
+                  <div class="text-xs text-slate-400">ML/Shopee</div>
+                  <div class="text-xs text-slate-400">/Amazon</div>
+                </div>
+              </div>
+            </div>
+            <div class="info-card glass rounded-xl px-4 py-3">
+              <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-secondary text-base">security</span>
+                <div>
+                  <div class="font-semibold text-sm">Cargas Seguras</div>
+                  <div class="text-xs text-slate-400">Monitoramento 24/7</div>
+                </div>
+              </div>
+            </div>
+            <div class="info-card glass rounded-xl px-4 py-3">
+              <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-secondary text-base">support_agent</span>
+                <div>
+                  <div class="font-semibold text-sm">Atendimento Direto</div>
+                  <div class="text-xs text-slate-400">WhatsApp Exclusivo</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- QUICK QUOTE -->
+        <div class="glass p-6 rounded-3xl shadow-glow animate-slide-up">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 bg-secondary/20 rounded-xl flex items-center justify-center">
+              <span class="material-symbols-outlined text-secondary text-xl">request_quote</span>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold">Orçamento Rápido</h3>
+              <p class="text-slate-400 text-xs">Preencha e envie direto para nosso WhatsApp</p>
+            </div>
+          </div>
+
+          <form id="leadForm" class="space-y-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <div class="space-y-1">
+                <label class="block text-xs font-semibold text-slate-300 uppercase">Origem</label>
+                <div class="relative">
+                  <input name="origem"
+                    class="w-full bg-panel2 border border-white/10 rounded-lg p-3 text-sm focus:ring-2 focus:ring-secondary focus:border-transparent"
+                    placeholder="Cidade/UF" type="text" required />
+                  <span
+                    class="material-symbols-outlined absolute right-3 top-3 text-slate-500 text-sm">location_on</span>
+                </div>
+              </div>
+              <div class="space-y-1">
+                <label class="block text-xs font-semibold text-slate-300 uppercase">Destino</label>
+                <div class="relative">
+                  <input name="destino"
+                    class="w-full bg-panel2 border border-white/10 rounded-lg p-3 text-sm focus:ring-2 focus:ring-secondary focus:border-transparent"
+                    placeholder="Cidade/UF" type="text" required />
+                  <span class="material-symbols-outlined absolute right-3 top-3 text-slate-500 text-sm">flag</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <div class="space-y-1">
+                <label class="block text-xs font-semibold text-slate-300 uppercase">Empresa/Nome</label>
+                <input name="nome"
+                  class="w-full bg-panel2 border border-white/10 rounded-lg p-3 text-sm focus:ring-2 focus:ring-secondary focus:border-transparent"
+                  placeholder="Nome da empresa" type="text" required />
+              </div>
+              <div class="space-y-1">
+                <label class="block text-xs font-semibold text-slate-300 uppercase">WhatsApp</label>
+                <input name="whats"
+                  class="w-full bg-panel2 border border-white/10 rounded-lg p-3 text-sm focus:ring-2 focus:ring-secondary focus:border-transparent"
+                  placeholder="(27) 9XXXX-XXXX" type="tel" required />
+              </div>
+            </div>
+
+            <div class="space-y-1">
+              <label class="block text-xs font-semibold text-slate-300 uppercase">Tipo de Carga</label>
+              <select name="categoria"
+                class="w-full bg-panel2 border border-white/10 rounded-lg p-3 text-sm focus:ring-2 focus:ring-secondary focus:border-transparent">
+                <option value="" disabled selected>Selecione uma opção</option>
+                <option value="Cargas Gerais">Cargas Gerais</option>
+                <option value="E-commerce (Mercado Livre/Shopee/Amazon)">E-commerce (Mercado Livre/Shopee/Amazon)
+                </option>
+                <option value="Medicamentos/Sensíveis">Medicamentos/Cargas Sensíveis</option>
+                <option value="Alimentos/Bebidas">Alimentos e Bebidas</option>
+                <option value="Materiais de Construção">Materiais de Construção</option>
+              </select>
+            </div>
+
+            <div class="space-y-1">
+              <label class="block text-xs font-semibold text-slate-300 uppercase">Detalhes da Carga</label>
+              <textarea name="detalhes"
+                class="w-full bg-panel2 border border-white/10 rounded-lg p-3 text-sm focus:ring-2 focus:ring-secondary focus:border-transparent min-h-[80px]"
+                placeholder="Peso, volume, dimensões, exigências especiais, temperatura, etc."></textarea>
+            </div>
+
+            <button
+              class="w-full bg-secondary text-white font-semibold py-3 rounded-lg transition-all hover:bg-secondary/90 hover-lift flex items-center justify-center gap-2"
+              type="submit">
+              <span class="material-symbols-outlined text-sm">send</span>
+              Enviar e Abrir WhatsApp
+            </button>
+
+            <div class="bg-blue-900/20 border border-blue-800/30 rounded-lg p-3">
+              <p class="text-xs text-blue-300 flex items-center gap-2">
+                <span class="material-symbols-outlined text-xs">info</span>
+                <strong>Retorno garantido em 5 minutos!</strong> Para cargas sensíveis, informe todas as exigências.
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- SERVIÇOS -->
+  <section id="servicos" class="section-padding bg-background-darker border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-extrabold mb-3">Nossas Soluções</h2>
+        <div class="h-1.5 w-20 bg-secondary mx-auto rounded-full mb-4"></div>
+        <p class="text-base text-slate-300/80 max-w-3xl mx-auto">
+          Oferecemos serviços especializados em logística B2B com processos otimizados,
+          padronização operacional e atendimento personalizado.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="group p-6 rounded-2xl glass hover-lift hover:border-secondary/50 transition-all">
+          <div
+            class="w-14 h-14 bg-secondary/15 text-secondary rounded-2xl flex items-center justify-center mb-4 group-hover:bg-secondary group-hover:text-white transition-all">
+            <span class="material-symbols-outlined text-2xl">bolt</span>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Transporte Express</h3>
+          <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+            Para urgências e reposições estratégicas. Priorizamos coleta e execução com prazos curtos, garantindo
+            agilidade quando você mais precisa.
+          </p>
+          <ul class="space-y-2 mb-4">
+            <li class="flex items-center gap-2 text-sm text-slate-300">
+              <span class="material-symbols-outlined text-secondary text-xs">check</span>
+              Coleta prioritária
+            </li>
+            <li class="flex items-center gap-2 text-sm text-slate-300">
+              <span class="material-symbols-outlined text-secondary text-xs">check</span>
+              Prazos reduzidos
+            </li>
+            <li class="flex items-center gap-2 text-sm text-slate-300">
+              <span class="material-symbols-outlined text-secondary text-xs">check</span>
+              Monitoramento contínuo
+            </li>
+          </ul>
+          <a href="#contato"
+            class="inline-flex items-center gap-2 text-secondary font-semibold text-sm hover:gap-3 transition-all">
+            Solicitar Orçamento
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+        </div>
+
+        <div class="group p-6 rounded-2xl glass hover-lift hover:border-secondary/50 transition-all">
+          <div
+            class="w-14 h-14 bg-blue-500/15 text-blue-400 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-blue-500 group-hover:text-white transition-all">
+            <span class="material-symbols-outlined text-2xl">hub</span>
+          </div>
+          <h3 class="text-xl font-bold mb-3">E-commerce Hub</h3>
+          <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+            Soluções completas para marketplaces. Transferências, movimentação para CDs e fulfillment para Mercado
+            Livre, Shopee, Amazon e outros.
+          </p>
+          <ul class="space-y-2 mb-4">
+            <li class="flex items-center gap-2 text-sm text-slate-300">
+              <span class="material-symbols-outlined text-secondary text-xs">check</span>
+              Integração com marketplaces
+            </li>
+            <li class="flex items-center gap-2 text-sm text-slate-300">
+              <span class="material-symbols-outlined text-secondary text-xs">check</span>
+              Gestão de fulfillment
+            </li>
+            <li class="flex items-center gap-2 text-sm text-slate-300">
+              <span class="material-symbols-outlined text-secondary text-xs">check</span>
+              Rastreamento em tempo real
+            </li>
+          </ul>
+          <a href="#contato"
+            class="inline-flex items-center gap-2 text-secondary font-semibold text-sm hover:gap-3 transition-all">
+            Falar com Especialista
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+        </div>
+
+        <div class="group p-6 rounded-2xl glass hover-lift hover:border-secondary/50 transition-all">
+          <div
+            class="w-14 h-14 bg-emerald-500/15 text-emerald-400 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-emerald-500 group-hover:text-white transition-all">
+            <span class="material-symbols-outlined text-2xl">health_and_safety</span>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Cargas Sensíveis</h3>
+          <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+            Transporte especializado para medicamentos, produtos frágeis e itens críticos. Seguimos rigorosamente as
+            exigências do embarcador.
+          </p>
+          <ul class="space-y-2 mb-4">
+            <li class="flex items-center gap-2 text-sm text-slate-300">
+              <span class="material-symbols-outlined text-secondary text-xs">check</span>
+              Controle de temperatura
+            </li>
+            <li class="flex items-center gap-2 text-sm text-slate-300">
+              <span class="material-symbols-outlined text-secondary text-xs">check</span>
+              Documentação especializada
+            </li>
+            <li class="flex items-center gap-2 text-sm text-slate-300">
+              <span class="material-symbols-outlined text-secondary text-xs">check</span>
+              Equipe treinada
+            </li>
+          </ul>
+          <a href="#contato"
+            class="inline-flex items-center gap-2 text-secondary font-semibold text-sm hover:gap-3 transition-all">
+            Consultar Requisitos
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALORES / PLANOS -->
+  <section id="valores" class="section-padding bg-background-dark border-y border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-extrabold mb-3">
+          Fretes com <span class="text-secondary">Preço Justo</span> e SLA Garantido
+        </h2>
+        <div class="h-1.5 w-20 bg-secondary mx-auto rounded-full mb-4"></div>
+        <p class="text-base text-slate-300/80 max-w-3xl mx-auto">
+          Valores competitivos para empresas que precisam de logística confiável, sem surpresa e sem enrolação.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+
+        <!-- PLANO EXPRESS -->
+        <div class="glass rounded-2xl p-6 hover-lift border border-white/10">
+          <h3 class="text-xl font-bold mb-2">Express</h3>
+          <p class="text-slate-400 text-sm mb-4">Urgências e reposições críticas</p>
+
+          <div class="text-3xl font-bold text-secondary mb-3">
+            a partir de R$ 1,99/km
+          </div>
+
+          <ul class="space-y-2 text-sm text-slate-300 mb-4">
+            <li class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-secondary text-sm">check</span>
+              Coleta prioritária
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-secondary text-sm">check</span>
+              SLA de resposta em 5 min
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-secondary text-sm">check</span>
+              Monitoramento contínuo
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-secondary text-sm">check</span>
+              Atendimento direto no WhatsApp
+            </li>
+          </ul>
+
+          <a id="ctaExpress"
+            class="block text-center bg-secondary py-2.5 rounded-lg font-semibold text-sm hover:bg-secondary/90 transition-all">
+            Cotar Express
+          </a>
+        </div>
+
+        <!-- PLANO EMPRESARIAL (DESTAQUE) -->
+        <div class="glass rounded-2xl p-6 hover-lift border-2 border-secondary shadow-glow relative">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-secondary px-3 py-1 rounded-full text-xs font-bold">
+            MAIS CONTRATADO
+          </div>
+
+          <h3 class="text-xl font-bold mb-2">Empresarial</h3>
+          <p class="text-slate-400 text-sm mb-4">Contratos e fretes recorrentes</p>
+
+          <div class="text-3xl font-bold text-secondary mb-3">
+            a partir de R$ 1,49/km
+          </div>
+
+          <ul class="space-y-2 text-sm text-slate-300 mb-4">
+            <li class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-secondary text-sm">check</span>
+              Fretes recorrentes
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-secondary text-sm">check</span>
+              Condições negociadas
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-secondary text-sm">check</span>
+              Suporte dedicado
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-secondary text-sm">check</span>
+              Ideal para e-commerce
+            </li>
+          </ul>
+
+          <a id="ctaEmpresarial"
+            class="block text-center bg-secondary py-2.5 rounded-lg font-semibold text-sm hover:bg-secondary/90 transition-all">
+            Falar com Consultor
+          </a>
+        </div>
+
+        <!-- PLANO SENSÍVEL -->
+        <div class="glass rounded-2xl p-6 hover-lift border border-white/10">
+          <h3 class="text-xl font-bold mb-2">Cargas Sensíveis</h3>
+          <p class="text-slate-400 text-sm mb-4">Medicamentos e itens críticos</p>
+
+          <div class="text-3xl font-bold text-secondary mb-3">
+            Sob consulta
+          </div>
+
+          <ul class="space-y-2 text-sm text-slate-300 mb-4">
+            <li class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-secondary text-sm">check</span>
+              Procedimentos especiais
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-secondary text-sm">check</span>
+              Documentação específica
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-secondary text-sm">check</span>
+              Equipe treinada
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-secondary text-sm">check</span>
+              Comunicação constante
+            </li>
+          </ul>
+
+          <a id="ctaSensivel"
+            class="block text-center bg-secondary py-2.5 rounded-lg font-semibold text-sm hover:bg-secondary/90 transition-all">
+            Consultar Requisitos
+          </a>
+        </div>
+
+      </div>
+
+      <p class="text-center text-xs text-slate-500 mt-6">
+        * Valores ilustrativos. O preço final depende da rota, tipo de carga e volume.
+      </p>
+    </div>
+  </section>
+
+  <!-- DIFERENCIAIS -->
+  <section id="diferenciais" class="section-padding">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-extrabold mb-3">Por que Escolher a MegaX?</h2>
+        <div class="h-1.5 w-20 bg-secondary mx-auto rounded-full mb-4"></div>
+        <p class="text-base text-slate-300/80 max-w-3xl mx-auto">
+          Diferenciais que fazem nossa logística ser premium e confiável para seu negócio.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="glass p-5 rounded-xl hover-lift">
+          <div class="w-12 h-12 bg-secondary/15 rounded-lg flex items-center justify-center mb-3">
+            <span class="material-symbols-outlined text-secondary text-lg">schedule</span>
+          </div>
+          <h4 class="text-base font-bold mb-2">Resposta em 5 Minutos</h4>
+          <p class="text-slate-400 text-sm">SLA garantido para cotação e agendamento via WhatsApp.</p>
+        </div>
+
+        <div class="glass p-5 rounded-xl hover-lift">
+          <div class="w-12 h-12 bg-secondary/15 rounded-lg flex items-center justify-center mb-3">
+            <span class="material-symbols-outlined text-secondary text-lg">visibility</span>
+          </div>
+          <h4 class="text-base font-bold mb-2">Visibilidade Total</h4>
+          <p class="text-slate-400 text-sm">Acompanhamento em tempo real de todas as etapas.</p>
+        </div>
+
+        <div class="glass p-5 rounded-xl hover-lift">
+          <div class="w-12 h-12 bg-secondary/15 rounded-lg flex items-center justify-center mb-3">
+            <span class="material-symbols-outlined text-secondary text-lg">shield</span>
+          </div>
+          <h4 class="text-base font-bold mb-2">Segurança Garantida</h4>
+          <p class="text-slate-400 text-sm">Processos rigorosos para cargas de alto valor.</p>
+        </div>
+
+        <div class="glass p-5 rounded-xl hover-lift">
+          <div class="w-12 h-12 bg-secondary/15 rounded-lg flex items-center justify-center mb-3">
+            <span class="material-symbols-outlined text-secondary text-lg">headset_mic</span>
+          </div>
+          <h4 class="text-base font-bold mb-2">Atendimento Direto</h4>
+          <p class="text-slate-400 text-sm">Sem intermediários, comunicação clara e eficiente.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section id="depoimentos" class="section-padding bg-background-darker border-y border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-extrabold mb-3">
+          Empresas que Confiam na MegaX
+        </h2>
+        <div class="h-1.5 w-20 bg-secondary mx-auto rounded-full mb-4"></div>
+        <p class="text-base text-slate-300/80 max-w-3xl mx-auto">
+          Avaliações reais de operações B2B. Troque pelos seus clientes depois.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+
+        <div class="glass p-5 rounded-xl hover-lift">
+          <div class="text-secondary text-base mb-2">★★★★★</div>
+          <p class="text-slate-300 text-sm mb-3">
+            "Resposta rápida no WhatsApp e entrega dentro do prazo. Hoje é nosso parceiro fixo."
+          </p>
+          <div class="text-xs text-slate-400 font-semibold">
+            Gerente de Operações • E-commerce
+          </div>
+        </div>
+
+        <div class="glass p-5 rounded-xl hover-lift">
+          <div class="text-secondary text-base mb-2">★★★★★</div>
+          <p class="text-slate-300 text-sm mb-3">
+            "Fechamos contrato mensal. Logística organizada, sem dor de cabeça."
+          </p>
+          <div class="text-xs text-slate-400 font-semibold">
+            Compras • Distribuidora Nacional
+          </div>
+        </div>
+
+        <div class="glass p-5 rounded-xl hover-lift">
+          <div class="text-secondary text-base mb-2">★★★★★</div>
+          <p class="text-slate-300 text-sm mb-3">
+            "Cargas sensíveis com acompanhamento total. Comunicação foi o diferencial."
+          </p>
+          <div class="text-xs text-slate-400 font-semibold">
+            Administrativo • Área da Saúde
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EMPRESA -->
+  <section id="empresa" class="section-padding bg-background-darker border-y border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-8 items-center">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Sobre a <span class="text-secondary">MegaX</span></h2>
+          <p class="text-base text-slate-300/80 mb-6 leading-relaxed">
+            A <strong>MegaX Logística</strong> atua com foco em transporte <strong>B2B interestadual</strong>,
+            oferecendo soluções personalizadas para empresas que exigem excelência operacional.
+            Nosso diferencial está na <strong>resposta rápida</strong>, padrão operacional elevado
+            e comunicação transparente durante toda a operação.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
+            <div class="info-card bg-white/5 p-4 rounded-xl">
+              <div class="text-secondary font-bold text-base mb-1">Missão</div>
+              <p class="text-xs text-slate-400">Entregar com prazo, cuidado e padrão de excelência.</p>
+            </div>
+            <div class="info-card bg-white/5 p-4 rounded-xl">
+              <div class="text-secondary font-bold text-base mb-1">Visão</div>
+              <p class="text-xs text-slate-400">Ser referência nacional em logística B2B premium.</p>
+            </div>
+            <div class="info-card bg-white/5 p-4 rounded-xl">
+              <div class="text-secondary font-bold text-base mb-1">Valores</div>
+              <p class="text-xs text-slate-400">Transparência, responsabilidade e parceria.</p>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-3">
+            <a id="ctaEmpresa"
+              class="bg-secondary px-6 py-3 rounded-lg font-semibold hover:bg-secondary/90 transition-all hover-lift">
+              <span class="material-symbols-outlined text-sm">whatsapp</span>
+              Falar no WhatsApp
+            </a>
+            <a href="#contato"
+              class="btn-soft px-6 py-3 rounded-lg font-semibold hover:bg-white/10 transition-all hover-lift">
+              Solicitar Proposta
+            </a>
+          </div>
+        </div>
+
+        <div class="glass p-6 rounded-2xl">
+          <h3 class="text-xl font-bold mb-4">Informações Corporativas</h3>
+          <div class="space-y-4">
+            <div class="flex items-start gap-3">
+              <div class="w-10 h-10 bg-secondary/15 rounded-lg flex items-center justify-center flex-shrink-0">
+                <span class="material-symbols-outlined text-secondary">business</span>
+              </div>
+              <div>
+                <h4 class="font-semibold text-base mb-1">Razão Social</h4>
+                <p class="text-slate-400 text-sm">MegaX Logística e Transportes Ltda</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <div class="w-10 h-10 bg-secondary/15 rounded-lg flex items-center justify-center flex-shrink-0">
+                <span class="material-symbols-outlined text-secondary">badge</span>
+              </div>
+              <div>
+                <h4 class="font-semibold text-base mb-1">CNPJ</h4>
+                <p class="text-slate-400 text-sm font-mono">38.905.919/0001-05</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <div class="w-10 h-10 bg-secondary/15 rounded-lg flex items-center justify-center flex-shrink-0">
+                <span class="material-symbols-outlined text-secondary">call</span>
+              </div>
+              <div>
+                <h4 class="font-semibold text-base mb-1">Contatos</h4>
+                <div class="space-y-1">
+                  <p class="text-slate-400 text-sm">ZAP: <span class="text-white font-semibold">(27)
+                      99688-8240</span></p>
+                  <p class="text-slate-400 text-sm">Telefone: <span class="text-white font-semibold">(27)
+                      98107-5811</span></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <div class="w-10 h-10 bg-secondary/15 rounded-lg flex items-center justify-center flex-shrink-0">
+                <span class="material-symbols-outlined text-secondary">location_on</span>
+              </div>
+              <div>
+                <h4 class="font-semibold text-base mb-1">Atendimento</h4>
+                <p class="text-slate-400 text-sm">Segunda a Sexta: 8h às 18h</p>
+                <p class="text-slate-400 text-sm">Sábado: 8h às 12h</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COBERTURA -->
+  <section id="cobertura" class="section-padding">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-extrabold mb-3">Cobertura Nacional</h2>
+        <div class="h-1.5 w-20 bg-secondary mx-auto rounded-full mb-4"></div>
+        <p class="text-base text-slate-300/80 max-w-3xl mx-auto">
+          Atendemos todo o território brasileiro com operação focada em transporte interestadual B2B.
+        </p>
+      </div>
+
+      <div class="glass rounded-2xl p-6 md:p-8">
+        <div class="grid lg:grid-cols-2 gap-8 items-center">
+          <div class="relative">
+            <!-- Mapa do Brasil simplificado -->
+            <div class="relative rounded-xl overflow-hidden bg-gradient-to-br from-primary/30 to-background-darker p-6">
+              <svg viewBox="0 0 520 520" class="w-full h-auto">
+                <defs>
+                  <filter id="glow">
+                    <feGaussianBlur stdDeviation="3.2" result="coloredBlur" />
+                    <feMerge>
+                      <feMergeNode in="coloredBlur" />
+                      <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                  </filter>
+                  <linearGradient id="g1" x1="0" x2="1">
+                    <stop offset="0" stop-color="#FF6A3D" stop-opacity="0.85" />
+                    <stop offset="1" stop-color="#3B82F6" stop-opacity="0.70" />
+                  </linearGradient>
+                </defs>
+
+                <!-- background shape -->
+                <path
+                  d="M115,90 L205,65 L270,85 L330,75 L400,120 L450,190 L435,270 L395,330 L330,385 L270,420 L210,440 L160,420 L120,380 L90,320 L75,250 L85,175 Z"
+                  fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)" stroke-width="2" />
+
+                <!-- network lines -->
+                <path
+                  d="M120,120 L210,95 L290,130 L360,120 L420,175 L410,245 L360,300 L295,345 L240,375 L185,365 L135,320 L105,260 L110,185 Z"
+                  fill="none" stroke="url(#g1)" stroke-width="3" filter="url(#glow)" opacity="0.95" />
+
+                <!-- nodes -->
+                <g fill="#FF6A3D" filter="url(#glow)">
+                  <circle cx="205" cy="95" r="6" />
+                  <circle cx="290" cy="130" r="6" />
+                  <circle cx="360" cy="120" r="6" />
+                  <circle cx="420" cy="175" r="6" />
+                  <circle cx="410" cy="245" r="6" />
+                  <circle cx="360" cy="300" r="6" />
+                  <circle cx="295" cy="345" r="6" />
+                  <circle cx="240" cy="375" r="6" />
+                  <circle cx="185" cy="365" r="6" />
+                  <circle cx="135" cy="320" r="6" />
+                  <circle cx="105" cy="260" r="6" />
+                  <circle cx="110" cy="185" r="6" />
+                </g>
+              </svg>
+
+              <div class="absolute inset-0 bg-gradient-to-t from-background-dark/50 to-transparent"></div>
+            </div>
+
+            <div class="mt-4 grid grid-cols-3 gap-2">
+              <div class="text-center p-2 bg-white/5 rounded-lg">
+                <div class="text-xl font-bold text-secondary">27</div>
+                <div class="text-xs text-slate-400">ESTADOS</div>
+              </div>
+              <div class="text-center p-2 bg-white/5 rounded-lg">
+                <div class="text-xl font-bold text-secondary">5.570+</div>
+                <div class="text-xs text-slate-400">MUNICÍPIOS</div>
+              </div>
+              <div class="text-center p-2 bg-white/5 rounded-lg">
+                <div class="text-xl font-bold text-secondary">100%</div>
+                <div class="text-xs text-slate-400">BRASIL</div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-2xl font-bold mb-4">Rede de Atendimento Completa</h3>
+            <p class="text-slate-300/80 text-sm mb-6 leading-relaxed">
+              Nossa operação cobre todo o território nacional com foco em transporte B2B.
+              Trabalhamos com rotas estratégicas e veículos adequados para cada tipo de carga.
+            </p>
+
+            <div class="space-y-3 mb-6">
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+                <span class="text-slate-300 text-sm">Transporte interestadual em todas as regiões</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+                <span class="text-slate-300 text-sm">Veículos adequados por tipo de carga</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+                <span class="text-slate-300 text-sm">Roteirização otimizada para melhor prazo</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+                <span class="text-slate-300 text-sm">Parcerias estratégicas em todo o Brasil</span>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap gap-3">
+              <a href="#contato"
+                class="bg-secondary px-6 py-3 rounded-lg font-semibold hover:bg-secondary/90 transition-all hover-lift">
+                Cotar Minha Rota
+              </a>
+              <a href="#servicos"
+                class="btn-soft px-6 py-3 rounded-lg font-semibold hover:bg-white/10 transition-all hover-lift">
+                Ver Tipos de Carga
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section-padding bg-background-darker border-y border-white/5">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center mb-8">
+        <h2 class="text-3xl md:text-4xl font-extrabold mb-3">Perguntas Frequentes</h2>
+        <div class="h-1.5 w-16 bg-secondary mx-auto rounded-full mb-4"></div>
+      </div>
+
+      <div class="space-y-3">
+
+        <details class="glass rounded-xl p-4">
+          <summary class="font-semibold cursor-pointer text-base">
+            A MegaX atende o Brasil inteiro?
+          </summary>
+          <p class="mt-2 text-slate-400 text-sm">
+            Sim. Operamos com transporte interestadual e atendemos todos os estados do Brasil.
+          </p>
+        </details>
+
+        <details class="glass rounded-xl p-4">
+          <summary class="font-semibold cursor-pointer text-base">
+            Vocês trabalham com contrato mensal?
+          </summary>
+          <p class="mt-2 text-slate-400 text-sm">
+            Sim. Temos contratos empresariais para fretes recorrentes, com valores negociados.
+          </p>
+        </details>
+
+        <details class="glass rounded-xl p-4">
+          <summary class="font-semibold cursor-pointer text-base">
+            Qual o prazo de resposta?
+          </summary>
+          <p class="mt-2 text-slate-400 text-sm">
+            Nosso SLA é de resposta em até <strong>5 minutos</strong> via WhatsApp.
+          </p>
+        </details>
+
+        <details class="glass rounded-xl p-4">
+          <summary class="font-semibold cursor-pointer text-base">
+            Transportam medicamentos?
+          </summary>
+          <p class="mt-2 text-slate-400 text-sm">
+            Sim, desde que atendidas as exigências do embarcador e da carga.
+          </p>
+        </details>
+
+        <details class="glass rounded-xl p-4">
+          <summary class="font-semibold cursor-pointer text-base">
+            Como faço para cotar?
+          </summary>
+          <p class="mt-2 text-slate-400 text-sm">
+            Basta enviar origem, destino e tipo de carga pelo WhatsApp. Respondemos em minutos.
+          </p>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato" class="section-padding">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-extrabold mb-3">Entre em Contato</h2>
+        <div class="h-1.5 w-20 bg-secondary mx-auto rounded-full mb-4"></div>
+        <p class="text-base text-slate-300/80 max-w-3xl mx-auto">
+          Estamos prontos para atender sua empresa com soluções logísticas personalizadas.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-3 gap-6">
+        <div class="lg:col-span-2 glass rounded-2xl p-6">
+          <h3 class="text-xl font-bold mb-4">Envie sua Necessidade</h3>
+          <form class="space-y-4">
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="space-y-1">
+                <label class="block text-sm font-semibold text-slate-300">Nome Completo</label>
+                <input type="text"
+                  class="w-full bg-panel2 border border-white/10 rounded-lg p-3 text-sm focus:ring-2 focus:ring-secondary focus:border-transparent"
+                  placeholder="Seu nome" required>
+              </div>
+              <div class="space-y-1">
+                <label class="block text-sm font-semibold text-slate-300">Empresa</label>
+                <input type="text"
+                  class="w-full bg-panel2 border border-white/10 rounded-lg p-3 text-sm focus:ring-2 focus:ring-secondary focus:border-transparent"
+                  placeholder="Nome da empresa" required>
+              </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="space-y-1">
+                <label class="block text-sm font-semibold text-slate-300">E-mail</label>
+                <input type="email"
+                  class="w-full bg-panel2 border border-white/10 rounded-lg p-3 text-sm focus:ring-2 focus:ring-secondary focus:border-transparent"
+                  placeholder="seu@email.com" required>
+              </div>
+              <div class="space-y-1">
+                <label class="block text-sm font-semibold text-slate-300">WhatsApp</label>
+                <input type="tel"
+                  class="w-full bg-panel2 border border-white/10 rounded-lg p-3 text-sm focus:ring-2 focus:ring-secondary focus:border-transparent"
+                  placeholder="(27) 9XXXX-XXXX" required>
+              </div>
+            </div>
+
+            <div class="space-y-1">
+              <label class="block text-sm font-semibold text-slate-300">Mensagem</label>
+              <textarea
+                class="w-full bg-panel2 border border-white/10 rounded-lg p-3 text-sm min-h-[120px] focus:ring-2 focus:ring-secondary focus:border-transparent"
+                placeholder="Descreva sua necessidade logística, tipo de carga, origem/destino, etc."></textarea>
+            </div>
+
+            <button type="submit"
+              class="w-full bg-secondary text-white font-semibold py-3 rounded-lg hover:bg-secondary/90 transition-all hover-lift">
+              Enviar Mensagem
+            </button>
+          </form>
+        </div>
+
+        <div class="space-y-4">
+          <div class="glass rounded-2xl p-6">
+            <h4 class="text-lg font-bold mb-4">Informações de Contato</h4>
+            <div class="space-y-4">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-secondary/15 rounded-lg flex items-center justify-center">
+                  <span class="material-symbols-outlined text-secondary">call</span>
+                </div>
+                <div>
+                  <div class="text-xs text-slate-400">WhatsApp Principal</div>
+                  <div class="text-base font-bold">(27) 99688-8240</div>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-secondary/15 rounded-lg flex items-center justify-center">
+                  <span class="material-symbols-outlined text-secondary">call</span>
+                </div>
+                <div>
+                  <div class="text-xs text-slate-400">Telefone</div>
+                  <div class="text-base font-bold">(27) 98107-5811</div>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-secondary/15 rounded-lg flex items-center justify-center">
+                  <span class="material-symbols-outlined text-secondary">mail</span>
+                </div>
+                <div>
+                  <div class="text-xs text-slate-400">E-mail</div>
+                  <div class="text-base font-bold">comercial@megax.com.br</div>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-secondary/15 rounded-lg flex items-center justify-center">
+                  <span class="material-symbols-outlined text-secondary">schedule</span>
+                </div>
+                <div>
+                  <div class="text-xs text-slate-400">Horário de Atendimento</div>
+                  <div class="font-semibold text-sm">Seg-Sex: 8h-18h</div>
+                  <div class="text-xs text-slate-400">Sábado: 8h-12h</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass rounded-2xl p-6">
+            <h4 class="text-lg font-bold mb-3">Atendimento Rápido</h4>
+            <p class="text-slate-400 text-sm mb-3">
+              Para cotações urgentes, utilize nosso WhatsApp e tenha resposta em até 5 minutos.
+            </p>
+            <a id="ctaFinal"
+              class="w-full bg-whatsapp text-white font-semibold py-2.5 rounded-lg flex items-center justify-center gap-2 hover:bg-whatsapp/90 transition-all">
+              <svg fill="currentColor" width="20" height="20" viewBox="0 0 16 16">
+                <path
+                  d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93a7.898 7.898 0 0 0-2.327-5.594z" />
+              </svg>
+              WhatsApp Rápido
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-background-darker py-10 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-6 items-start">
+        <div>
+          <img id="logoFooter" alt="MegaX Logo" class="h-8 w-auto brightness-110 mb-3" />
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Logística B2B premium com padrão profissional, atendimento direto e operação nacional.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-bold mb-3 text-white uppercase text-xs tracking-widest">Empresa</h4>
+          <div class="space-y-1">
+            <div class="text-sm text-slate-400"><strong class="text-slate-200">CNPJ:</strong> 38.905.919/0001-05</div>
+            <div class="text-sm text-slate-400"><strong class="text-slate-200">Razão Social:</strong> MegaX Logística e
+              Transportes Ltda</div>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-bold mb-3 text-white uppercase text-xs tracking-widest">Contato</h4>
+          <div class="space-y-1 text-sm text-slate-400">
+            <div><strong class="text-slate-150">ZAP:</strong> (27) 99688-8240</div>
+            <div><strong class="text-slate-200">Telefone:</strong> (27) 98107-5811</div>
+            <div><strong class="text-slate-200">E-mail:</strong> comercial@megax.com.br</div>
+            <div class="mt-1"><strong class="text-secondary">SLA:</strong> resposta em até <strong>5 minutos</strong>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-bold mb-3 text-white uppercase text-xs tracking-widest">Links Rápidos</h4>
+          <div class="flex flex-wrap gap-2">
+            <a href="#servicos"
+              class="btn-soft px-3 py-1.5 rounded-lg text-xs font-semibold hover:bg-white/10 transition-colors">Serviços</a>
+            <a href="#cobertura"
+              class="btn-soft px-3 py-1.5 rounded-lg text-xs font-semibold hover:bg-white/10 transition-colors">Cobertura</a>
+            <a href="#contato"
+              class="btn-soft px-3 py-1.5 rounded-lg text-xs font-semibold hover:bg-white/10 transition-colors">Contato</a>
+            <a id="ctaFooter"
+              class="bg-secondary px-3 py-1.5 rounded-lg text-xs font-semibold hover:bg-secondary/90 transition-colors">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="mt-6 pt-4 border-t border-white/5 text-slate-500 text-xs flex flex-col md:flex-row gap-2 items-center justify-between">
+        <div>© <span id="year"></span> MegaX Logística e Transportes Ltda. Todos os direitos reservados.</div>
+        <div class="flex gap-4">
+          <a class="hover:text-secondary transition-colors" href="#servicos">Serviços</a>
+          <a class="hover:text-secondary transition-colors" href="#empresa">Empresa</a>
+          <a class="hover:text-secondary transition-colors" href="#contato">Contato</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOAT WHATSAPP -->
+  <a id="waFloat"
+    class="fixed bottom-4 right-4 z-50 bg-whatsapp text-white px-4 py-3 rounded-full shadow-2xl hover:scale-105 transition-transform font-semibold flex items-center gap-2 animate-pulse-glow"
+    href="#">
+    <svg fill="currentColor" width="20" height="20" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93a7.898 7.898 0 0 0-2.327-5.594l.001-.002zm-5.607 11.466h-.001c-1.216 0-2.409-.327-3.453-.944l-.248-.147-2.572.673.685-2.507-.161-.256a6.606 6.606 0 0 1-1.012-3.486c0-3.646 2.971-6.617 6.621-6.617 1.767 0 3.429.687 4.681 1.94 1.253 1.253 1.94 2.915 1.94 4.682 0 3.647-2.972 6.618-6.622 6.618z">
+      </path>
+    </svg>
+    WhatsApp
+  </a>
+
+  <script>
+    // ====== CONFIG ======
+    const WHATSAPP_NUMBER = "5527996888240";
+    const CNPJ = "38.905.919/0001-05";
+    const TELEFONE_FIXO = "27981075811";
+    const EMAIL = "comercial@megax.com.br";
+
+    // Seu logo (RAW do GitHub)
+    const LOGO_URL = "https://raw.githubusercontent.com/ceocript/megax/main/megax.png";
+
+    function waLink(message) {
+      return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+    }
+
+    const baseMsg = `Olá! Gostaria de cotar um transporte com a MegaX. 
+
+*Informações:*
+• Atendem Brasil inteiro (interestadual)?
+• Preciso de prazo + valor
+• Retorno em até 5 minutos, por favor.`;
+
+    function setHref(id, href) {
+      const el = document.getElementById(id);
+      if (el) el.href = href;
+    }
+
+    // Logo
+    const logoTop = document.getElementById("logoTop");
+    const logoFooter = document.getElementById("logoFooter");
+    if (logoTop) logoTop.src = LOGO_URL;
+    if (logoFooter) logoFooter.src = LOGO_URL;
+
+    // WhatsApp CTAs
+    const waBase = waLink(baseMsg);
+    const ctaIds = ["ctaTop", "ctaTopMobile", "ctaHero", "ctaEmpresa", "ctaFinal", "ctaFooter", "waFloat", "ctaExpress", "ctaEmpresarial", "ctaSensivel"];
+    ctaIds.forEach(id => setHref(id, waBase));
+
+    // Ano atual
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Form -> WhatsApp
+    document.getElementById("leadForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const fd = new FormData(e.target);
+      const d = Object.fromEntries(fd);
+
+      const msg =
+        `*COTAÇÃO • SITE MEGAX*
+--------------------------------
+*Empresa/Nome:* ${d.nome || "-"}
+*Meu WhatsApp:* ${d.whats || "-"}
+
+*ORIGEM:* ${d.origem || "-"}
+*DESTINO:* ${d.destino || "-"}
+*CATEGORIA:* ${d.categoria || "-"}
+
+*DETALHES DA CARGA:*
+${d.detalhes || "-"}
+
+--------------------------------
+*RETORNO EM ATÉ 5 MINUTOS, POR FAVOR.*`;
+
+      window.open(waLink(msg), "_blank");
+    });
+
+    // Mobile menu
+    function toggleMenu() {
+      const m = document.getElementById("mobileMenu");
+      if (!m) return;
+      m.classList.toggle("hidden");
+    }
+    window.toggleMenu = toggleMenu;
+
+    // Smooth scroll para âncoras
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // FAQ toggle
+    document.querySelectorAll('details').forEach(detail => {
+      detail.addEventListener('toggle', function () {
+        if (this.open) {
+          this.style.backgroundColor = 'rgba(255, 106, 61, 0.05)';
+        } else {
+          this.style.backgroundColor = '';
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
