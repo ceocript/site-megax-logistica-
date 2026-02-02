@@ -996,17 +996,17 @@
       <div class="grid lg:grid-cols-3 gap-6">
         <div class="lg:col-span-2 glass rounded-2xl p-6">
           <h3 class="text-xl font-bold mb-4">Envie sua Necessidade</h3>
-          <form class="space-y-4">
+          <form id="contatoForm" class="space-y-4">
             <div class="grid md:grid-cols-2 gap-4">
               <div class="space-y-1">
                 <label class="block text-sm font-semibold text-slate-300">Nome Completo</label>
-                <input type="text"
+                <input type="text" id="contatoNome"
                   class="w-full bg-panel2 border border-white/10 rounded-lg p-3 text-sm focus:ring-2 focus:ring-secondary focus:border-transparent"
                   placeholder="Seu nome" required>
               </div>
               <div class="space-y-1">
                 <label class="block text-sm font-semibold text-slate-300">Empresa</label>
-                <input type="text"
+                <input type="text" id="contatoEmpresa"
                   class="w-full bg-panel2 border border-white/10 rounded-lg p-3 text-sm focus:ring-2 focus:ring-secondary focus:border-transparent"
                   placeholder="Nome da empresa" required>
               </div>
@@ -1015,13 +1015,13 @@
             <div class="grid md:grid-cols-2 gap-4">
               <div class="space-y-1">
                 <label class="block text-sm font-semibold text-slate-300">E-mail</label>
-                <input type="email"
+                <input type="email" id="contatoEmail"
                   class="w-full bg-panel2 border border-white/10 rounded-lg p-3 text-sm focus:ring-2 focus:ring-secondary focus:border-transparent"
                   placeholder="seu@email.com" required>
               </div>
               <div class="space-y-1">
                 <label class="block text-sm font-semibold text-slate-300">WhatsApp</label>
-                <input type="tel"
+                <input type="tel" id="contatoWhats"
                   class="w-full bg-panel2 border border-white/10 rounded-lg p-3 text-sm focus:ring-2 focus:ring-secondary focus:border-transparent"
                   placeholder="(27) 9XXXX-XXXX" required>
               </div>
@@ -1029,14 +1029,16 @@
 
             <div class="space-y-1">
               <label class="block text-sm font-semibold text-slate-300">Mensagem</label>
-              <textarea
+              <textarea id="contatoMensagem"
                 class="w-full bg-panel2 border border-white/10 rounded-lg p-3 text-sm min-h-[120px] focus:ring-2 focus:ring-secondary focus:border-transparent"
-                placeholder="Descreva sua necessidade logística, tipo de carga, origem/destino, etc."></textarea>
+                placeholder="Descreva sua necessidade logística, tipo de carga, origem/destino, etc."
+                required></textarea>
             </div>
 
-            <button type="submit"
-              class="w-full bg-secondary text-white font-semibold py-3 rounded-lg hover:bg-secondary/90 transition-all hover-lift">
-              Enviar Mensagem
+            <button type="button" onclick="enviarContatoParaWhatsApp()"
+              class="w-full bg-secondary text-white font-semibold py-3 rounded-lg hover:bg-secondary/90 transition-all hover-lift flex items-center justify-center gap-2">
+              <span class="material-symbols-outlined text-sm">send</span>
+              Enviar e Abrir WhatsApp
             </button>
           </form>
         </div>
@@ -1112,7 +1114,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-4 gap-6 items-start">
         <div>
-          <img id="logoFooter" alt="MegaX Logo" class="h-8 w-auto brightness-110 mb-3" />
+          <img id="logoFooter" alt="MegaX Logo" class="h-16 w-auto brightness-110 mb-3" />
           <p class="text-slate-400 text-sm leading-relaxed">
             Logística B2B premium com padrão profissional, atendimento direto e operação nacional.
           </p>
@@ -1203,6 +1205,40 @@
       if (el) el.href = href;
     }
 
+    // Função para enviar formulário de contato para WhatsApp
+    function enviarContatoParaWhatsApp() {
+      const nome = document.getElementById('contatoNome').value;
+      const empresa = document.getElementById('contatoEmpresa').value;
+      const email = document.getElementById('contatoEmail').value;
+      const whatsapp = document.getElementById('contatoWhats').value;
+      const mensagem = document.getElementById('contatoMensagem').value;
+
+      // Validação básica
+      if (!nome || !empresa || !email || !whatsapp || !mensagem) {
+        alert('Por favor, preencha todos os campos obrigatórios.');
+        return;
+      }
+
+      const texto = `*NOVA MENSAGEM DO SITE MEGAX*
+--------------------------------
+*Nome:* ${nome}
+*Empresa:* ${empresa}
+*E-mail:* ${email}
+*WhatsApp do Cliente:* ${whatsapp}
+
+*MENSAGEM:*
+${mensagem}
+
+--------------------------------
+*ENVIADO DO FORMULÁRIO DE CONTATO*
+*Retorno em até 5 minutos, por favor.*`;
+
+      window.open(waLink(texto), '_blank');
+
+      // Limpar formulário após envio
+      document.getElementById('contatoForm').reset();
+    }
+
     // Logo
     const logoTop = document.getElementById("logoTop");
     const logoFooter = document.getElementById("logoFooter");
@@ -1217,7 +1253,7 @@
     // Ano atual
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Form -> WhatsApp
+    // Form -> WhatsApp (formulário principal)
     document.getElementById("leadForm").addEventListener("submit", (e) => {
       e.preventDefault();
       const fd = new FormData(e.target);
@@ -1240,6 +1276,12 @@ ${d.detalhes || "-"}
 *RETORNO EM ATÉ 5 MINUTOS, POR FAVOR.*`;
 
       window.open(waLink(msg), "_blank");
+    });
+
+    // Form -> WhatsApp (formulário de contato)
+    document.getElementById("contatoForm")?.addEventListener("submit", (e) => {
+      e.preventDefault();
+      enviarContatoParaWhatsApp();
     });
 
     // Mobile menu
